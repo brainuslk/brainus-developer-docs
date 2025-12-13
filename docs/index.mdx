@@ -1,0 +1,168 @@
+---
+title: Getting Started
+description: Welcome to the BrainUs API - Educational content API with built-in citations for Sri Lankan curriculum
+icon: BookOpen
+---
+
+import { Callout } from "fumadocs-ui/components/callout";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+Build powerful educational applications with our RAG-powered API for Sri Lankan curriculum content. Every response includes verifiable citations from official educational documents.
+
+<Callout type="info">
+  **New here?** Check out our [Quick Start Guide](/docs/quickstart) to make your
+  first API call in under 5 minutes.
+</Callout>
+
+## What is BrainUs API?
+
+BrainUs API provides programmatic access to a comprehensive database of Sri Lankan educational content spanning grades 6-13. Our retrieval-augmented generation (RAG) system ensures that every answer comes with source citations, making it perfect for building trustworthy educational applications.
+
+### Key Features
+
+- **Verified Citations** - Every response includes source documents and page references from official curriculum materials
+- ** Curriculum Coverage** - 1,000+ indexed documents covering Grade 6-13 Sri Lankan syllabus across all subjects
+- **Production Ready** - 99.9% uptime SLA with sub-500ms p95 latency. Battle-tested infrastructure
+- ** Developer First** - REST API with Python and JavaScript SDKs, comprehensive docs, and OpenAPI spec
+
+## Quick Example
+
+Here's a simple example of querying the BrainUs API:
+
+<Tabs items={['curl', 'Python', 'JavaScript']}>
+  <Tab value="curl">
+    ```bash
+    curl -X POST https://api.brainus.lk/api/v1/dev/query \
+      -H "X-API-Key: $BRAINUS_API_KEY" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "query": "Explain photosynthesis",
+        "store_id": "default"
+      }'
+    ```
+  </Tab>
+  <Tab value="Python">
+    ```python
+    import os
+    import asyncio
+    from brainus_ai import BrainusAI
+
+    async def main():
+        async with BrainusAI(api_key=os.getenv("BRAINUS_API_KEY")) as client:
+            response = await client.query(
+                query="Explain photosynthesis",
+                store_id="default"
+            )
+            print(response.answer)
+
+    if __name__ == "__main__":
+        asyncio.run(main())
+    ```
+
+  </Tab>
+  <Tab value="JavaScript">
+    ```javascript
+    import { BrainusAI } from '@brainus/ai';
+
+    const client = new BrainusAI({
+      apiKey: process.env.BRAINUS_API_KEY
+    });
+
+    async function main() {
+      const response = await client.query({
+        query: 'Explain photosynthesis',
+        storeId: 'default'
+      });
+      console.log(response.answer);
+    }
+
+    main();
+    ```
+
+  </Tab>
+</Tabs>
+
+**Response:**
+
+```json
+{
+  "answer": "Photosynthesis is the process by which green plants use sunlight to convert carbon dioxide and water into glucose and oxygen...",
+  "citations": [
+    {
+      "document": "Grade 10 Science Textbook",
+      "page": 45,
+      "relevance": 0.95
+    }
+  ],
+  "metadata": {
+    "tokens_used": 150,
+    "response_time_ms": 342
+  }
+}
+```
+
+## API Plans
+
+Choose the plan that fits your needs:
+
+| Feature                    | Free      | Starter  | Pro            | Enterprise      |
+| -------------------------- | --------- | -------- | -------------- | --------------- |
+| **Price**                  | LKR 0     | LKR 999  | LKR 3,499      | LKR 14,999      |
+| **Requests/month**         | 300       | 2,000    | 10,000         | 50,000          |
+| **Requests/minute**        | 10        | 20       | 60             | 200             |
+| **Custom Knowledge Bases** | ❌        | ❌       | ❌             | ✅              |
+| **Analytics**              | Basic     | Standard | Advanced       | Custom          |
+| **Support**                | Community | Email    | Priority Email | Dedicated + SLA |
+| **Webhooks**               | ❌        | ❌       | ✅             | ✅              |
+
+<Callout type="tip">
+  All plans include the same features - only rate limits differ. Start with Free
+  and upgrade as you grow!
+</Callout>
+
+## Next Steps
+
+Ready to start building? Here's your roadmap:
+
+<Steps>
+  <Step>
+    ### Create an Account
+    
+    Sign up at [developers.brainus.lk](https://developers.brainus.lk) to get started
+  </Step>
+
+{" "}
+
+<Step>
+  ### Get Your API Key Generate your first API key from the
+  [dashboard](/dashboard/keys)
+</Step>
+
+{" "}
+
+<Step>
+  ### Make Your First Request Follow our [Quick Start Guide](/docs/quickstart)
+  to make your first API call
+</Step>
+
+  <Step>
+    ### Explore Examples
+    
+    Check out our [code examples](/docs/examples) and [SDKs](/docs/sdks)
+  </Step>
+</Steps>
+
+## Popular Resources
+
+- **[Quick Start](/docs/quickstart)** - Make your first API call in 5 minutes
+- **[Authentication](/docs/authentication)** - Learn how to use API keys securely
+- **[API Reference](/docs/api-reference/query)** - Complete endpoint documentation
+- **[Code Examples](/docs/examples)** - Full examples in Python and JavaScript
+
+## Need Help?
+
+- Browse our [comprehensive documentation](/docs)
+- Join our [Discord community](https://discord.gg/3Y7KsR7qcW)
+- Email us at [developers@brainus.lk](mailto:developers@brainus.lk)
+- Report issues on [GitHub](https://github.com/BrainUsLK)
