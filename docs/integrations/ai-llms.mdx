@@ -28,6 +28,7 @@ curl https://developers.brainus.lk/llms-full.txt
 ```
 
 **Use Cases:**
+
 - Training custom AI models on BrainUs documentation
 - Providing full context to AI assistants
 - Building AI-powered documentation search
@@ -49,6 +50,7 @@ curl https://developers.brainus.lk/docs/errors.mdx
 ```
 
 **Use Cases:**
+
 - Retrieving specific documentation sections
 - Building custom documentation viewers
 - Integrating docs into AI workflows
@@ -86,6 +88,7 @@ All documentation pages are pre-processed and stored with their Markdown content
 ### 3. Content Format
 
 Each page includes:
+
 - **Page title** with URL reference
 - **Full markdown content** with proper formatting
 - **Code examples** with syntax highlighting markers
@@ -216,10 +219,10 @@ For high-volume AI applications, please contact [developers@brainus.lk](mailto:d
 Build a chatbot that answers BrainUs API questions by loading the full documentation:
 
 ```typescript
-import { BrainusAI } from '@brainus/ai';
+import { BrainusAI } from "@brainus/ai";
 
 // Fetch docs once on startup
-const docs = await fetch('https://developers.brainus.lk/llms-full.txt');
+const docs = await fetch("https://developers.brainus.lk/llms-full.txt");
 const docsText = await docs.text();
 
 // Use in chatbot responses
@@ -247,8 +250,8 @@ Build an IDE extension that provides inline documentation:
 
 ```typescript
 // Fetch specific page when user hovers over API call
-const docUrl = 'https://developers.brainus.lk/docs/api-reference/query.mdx';
-const markdown = await fetch(docUrl).then(r => r.text());
+const docUrl = "https://developers.brainus.lk/docs/api-reference/query.mdx";
+const markdown = await fetch(docUrl).then((r) => r.text());
 // Display in IDE tooltip
 ```
 

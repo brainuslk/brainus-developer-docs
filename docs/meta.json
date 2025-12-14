@@ -1,10 +1,9 @@
 {
   "pages": [
     "---Introduction---",
+    "index",
     "quick-start",
     "comparisons",
-    "index",
-    "quickstart",
     "---Getting Started---",
     "authentication",
     "rate-limits",
@@ -17,6 +16,7 @@
     "sdks",
     "errors",
     "---Integrations---",
-    "integrations"
+    "integrations",
+    "api-playground"
   ]
 }
