@@ -5,6 +5,7 @@ icon: GitCompareArrows
 ---
 
 import { Callout } from "fumadocs-ui/components/callout";
+import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
 
 ## Overview
 
@@ -213,28 +214,35 @@ Ready to experience the difference?
 
 ## Questions?
 
-### "Why is BrainUs more expensive than Apilage AI's token model?"
+<Accordions>
+  <Accordion id="pricing-comparison" title="Why is BrainUs more expensive than Apilage AI's token model?">
+    BrainUs pricing is per-request, not per-token. This is more predictable and transparent. Our free tier (300 requests) is perfect for testing, and paid plans start at LKR 999/month for 2,000 requests.
+  </Accordion>
 
-BrainUs pricing is per-request, not per-token. This is more predictable and transparent. Our free tier (300 requests) is perfect for testing, and paid plans start at LKR 999/month for 2,000 requests.
+{" "}
+<Accordion id="migration" title="Can I migrate from Apilage AI?">
+  Yes! Migration is straightforward. We provide migration guides and support.
+  Contact [developers@brainus.lk](mailto:developers@brainus.lk).
+</Accordion>
 
-### "Can I migrate from Apilage AI?"
+{" "}
+<Accordion id="custom-content" title="Does BrainUs support custom content?">
+  Currently, BrainUs focuses on verified Sri Lankan curriculum content. Custom
+  content integration is on our roadmap for Enterprise plans.
+</Accordion>
 
-Yes! Migration is straightforward. We provide migration guides and support. Contact [developers@brainus.lk](mailto:developers@brainus.lk).
+  <Accordion id="rag-benefits" title="What makes RAG better than direct LLM calls?">
+    RAG grounds responses in actual documents, providing:
 
-### "Does BrainUs support custom content?"
+    - Verifiable citations
+    - Reduced hallucinations
+    - Curriculum-accurate content
+    - Transparent sourcing
 
-Currently, BrainUs focuses on verified Sri Lankan curriculum content. Custom content integration is on our roadmap for Enterprise plans.
+    Direct LLM calls can hallucinate facts and provide unverified information.
 
-### "What makes RAG better than direct LLM calls?"
-
-RAG grounds responses in actual documents, providing:
-
-- Verifiable citations
-- Reduced hallucinations
-- Curriculum-accurate content
-- Transparent sourcing
-
-Direct LLM calls can hallucinate facts and provide unverified information.
+  </Accordion>
+</Accordions>
 
 ## Next Steps
 
